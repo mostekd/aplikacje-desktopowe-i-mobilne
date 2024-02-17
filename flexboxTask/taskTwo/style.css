@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #333;
+    font-size: 50px;
+}
+
+section {
+    margin: 20px 0;
+    height: 400px;
+    background-color: #789;
+}
+
+.square {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+}
+
+.one {
+    background-color: gold;
+}
+
+.two {
+    background-color: lime;
+}
+
+.three {
+    background-color: royalblue;
+}
+
+.four {
+    background-color: tomato;
+}
+
+.first{
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: center;
+}
+
+.second {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+ 
+.third {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+}
