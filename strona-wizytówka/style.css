@@ -280,6 +280,22 @@ footer {
     display: none;
 }
 
+.zdj img{
+    margin-left: 50px;
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.zdj img:hover{
+    max-height: 250px;
+    max-width: 500px;
+    border-radius: 10px;
+    gap: 10px;
+    transform: scale(1.1);
+}
+
 @media only screen and (max-width: 768px) {
     header {
         display: flex;
@@ -350,4 +366,19 @@ footer {
         text-align: center;
         margin: 6px;
      }  
+     .zdj img{
+        margin-left: 5px;
+        height: 200px;
+        width: 400px;
+        border-radius: 10px;
+        gap: 10px;
+    }
+    
+    .zdj img:hover{
+        max-height: 250px;
+        max-width: 500px;
+        border-radius: 10px;
+        gap: 10px;
+        transform: scale(1.1);
+    }
 }
