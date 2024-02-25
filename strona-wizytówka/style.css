@@ -1,0 +1,353 @@
+*{
+    margin: 0;
+    text-decoration: none;
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    height: 35px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px;
+    padding-right: 190px;
+    /* The glass effect on navbar || efekt szkła w navbarze */
+    background: rgba(147, 143, 143, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border: 1px solid rgba(147, 143, 143, 0.18);
+}
+
+.main {
+    overflow: auto;
+    width: 100vw;
+    height: calc(100vh - 50px); /* Wysokość ekranu minus wysokość stopki */
+    background: url('./images/placeholderbackground.jpg');
+    background-size: cover;
+    margin-bottom: 50px; /* Wysokość stopki */
+}
+
+.tresc{
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    margin: 10px;
+    overflow: auto;
+    text-shadow: 2px 2px #000000;
+    width: 50%;
+}
+.tresc h2, .tresc h4{
+    margin-top: 15px;
+}
+.top-nav{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: visible;
+}
+
+.top-nav-buttons{
+    overflow: auto;
+    width: 50%;
+    padding-top: 150px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.formularz{
+    margin-left: 1%;
+    justify-content: center;
+}
+
+#MyForm{
+    align-items: center;
+    justify-content: center;
+}
+
+.spolecznosci{
+    margin: 3px;
+}
+
+.logo{
+    display: flex;
+    width: 20%;
+}
+
+.spinaczcenter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    justify-content: center;
+}
+
+/* Styl dla ikony */
+.icon {
+    width: 12.25px; /* Dostosuj szerokość ikony do własnych preferencji */
+    height: 14px; /* Dostosuj wysokość ikony do własnych preferencji */
+    fill: #112c5e; /* Kolor ikony */
+    transition: transform 0.3s ease; /* Dodaj płynne przejście */
+}
+
+/* Dodatkowy styl dla ikony po najechaniu */
+.dropbtn:hover{
+    /* Zmiana d to zadanie */
+    .icon{
+        transform: rotate(180deg);
+    }
+}
+
+.dropbtn {
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 20px;
+  border-style: solid;
+  margin-left: 30px;
+}
+
+/* Dropdown button */
+.dropdown{
+    position: relative;
+    width: 135px;
+    color: white;
+    margin-left: 15px;
+}
+
+.dropdown-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(164, 164, 164, 0.19);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(5.8px);
+    border: 1px solid rgba(164, 164, 164, 0.26);
+    padding: 5px;
+    transition: border-radius 1s;
+    cursor: pointer;
+}
+
+.dropdown-kontakt{
+    letter-spacing: 1.5px;
+    font-weight: 2em;
+    position: relative;
+    width: 135px;
+    margin-left: 15px;
+}
+
+.dropdown-top-kontakt{
+    letter-spacing: 1.5px;
+    font-weight: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(164, 164, 164, 0.19);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(5.8px);
+    border: 1px solid rgba(164, 164, 164, 0.26);
+    padding: 5px;
+    transition: border-radius 1s;
+    cursor: pointer;
+    
+}
+
+.dropdown-top-kontakt a{
+    color: white;
+}
+
+.dropdown-top.active{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.dropdown-logo, .dropdown-toggle{
+    height: 18px;
+    font-weight: 2em;
+    letter-spacing: 1.5px;
+}
+
+.dropdown-list{
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    padding-left: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    perspective: 90px;
+}
+
+.dropdown-list li{
+    width: 135px;
+    height: 35px;
+    text-align: center;
+    list-style: none;
+    background: rgba(164, 164, 164, 0.35);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px);
+    border: 1px solid rgba(129, 125, 125, 0.36);
+    line-height: 35px;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    transition: all 0.1s ease-out;
+    transition-delay: calc(var(--j) * 0.1s);
+    opacity: 0;
+}
+
+.dropdown-list li.active{
+    transition: transform, opacity 0.1s ease-out;
+    transition-delay: calc(var(--i) * 0.1s);
+    transform: rotateX(0deg);
+    opacity: 1;
+    cursor: pointer;
+}
+
+.dropdown-list li a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    display: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.dropdown-list li a.active{
+    display: block;
+}
+
+.dropdown-list li.active:hover{
+    background-color: rgba(43, 43, 43, 0.35);
+    backdrop-filter: blur(10px);
+}
+
+.spinaczcenter input{
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.kierunkowy{
+    color: #111111;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.spinaczcenter textarea{
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #111111;
+    min-width: 300px;
+    min-height: 100px;
+}
+
+.przycisk{
+    border-radius: 10px;
+    height: 30px;
+    font-size: medium;
+    background-color: #fff;
+    width: 60px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(147, 143, 143, 0.6);
+    color: black;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Dowolna wysokość stopki */
+}
+
+.phone{
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        display: flex;
+        height: 35px;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 5px;
+        padding-right: 10px;
+        background: rgba(147, 143, 143, 0.6);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3.5px);
+        -webkit-backdrop-filter: blur(3.5px);
+        border: 1px solid rgba(147, 143, 143, 0.18);
+    }
+.tresc{
+    margin: 5%;
+    width: 90%;
+}
+    .spolecznosci{
+        margin: 3px;
+    }
+
+    .logo{
+        display: flex;
+        width: 45%;
+    }
+    .main {
+        width: 100vw;
+        min-height: calc(100vh - 50px); /* Subtract footer height from viewport height */
+        background: url('./images/placeholderbackground.jpg');
+        background-size: cover;
+        padding-bottom: 50px; /* Add padding equal to the height of the footer */
+        box-sizing: border-box; /* Ensure padding is included in the height calculation */
+        position: relative; /* Add position relative */
+        overflow: auto; /* Enable scrolling if content exceeds viewport height */
+        top: 0; /* Ensure main content starts from the top */
+    }    
+    
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(147, 143, 143);
+        color: black;
+        font-size: larger;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        z-index: 999;
+    }
+    
+    .top-nav-buttons{
+        display: none;
+    }
+
+    .phone{
+        display: flex;
+        color: white;
+        margin-top: 250px;
+    }
+
+    .spinaczcenter input{
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+    .tresc h2,.tresc h4{
+        text-align: center;
+        margin: 6px;
+     }  
+}

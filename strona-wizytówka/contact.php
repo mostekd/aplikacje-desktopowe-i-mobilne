@@ -1,15 +1,3 @@
-<!-- Dear user:
-When I wrote this code, only I and God knew what it was.
-Now, only God knows!
-
-So if you are done trying to 'optimize' this code (and failed), please increment the following counter as a warning:
-to the next guy:
-
-total_hours_wasted_here = 400
-
-notes:
-use icons from the fontawesome website plase and not all the svg
--->
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -98,21 +86,47 @@ use icons from the fontawesome website plase and not all the svg
                 </div>
             </div>
         </nav>
-        <div class="tresc">
-            <h2>Witaj w Secur-IT!</h2>
-            <p>Jesteśmy firmą, która specjalizuje się w zapewnianiu kompleksowych rozwiązań w dziedzinie bezpieczeństwa komputerowego i sieciowego. Nasza pasja do technologii oraz zaangażowanie w ochronę danych sprawiają, że jesteśmy partnerem, na którym możesz polegać w cyfrowym świecie.</p>
-            <h2>Nasza Misja</h2>
-            <p>W Secur-IT wierzymy, że bezpieczeństwo IT powinno być dostępne dla wszystkich. Naszym celem jest zapewnienie naszym klientom spokoju ducha, wiedząc, że ich dane są w bezpiecznych rękach. Dążymy do tego poprzez świadczenie usług najwyższej jakości i ciągłe doskonalenie naszych rozwiązań.</p>
-            <h2>Co Oferujemy</h2>
-            <p>Oferujemy szeroki zakres usług, obejmujący m.in. tworzenie i administrację sieci komputerowych, projektowanie stron internetowych oraz serwis komputerowy. Nasze rozwiązania są elastyczne i dostosowane do indywidualnych potrzeb każdego klienta, aby zapewnić kompleksową ochronę danych i infrastruktury IT.</p>
-            <h2>Dlaczego Wybrać Secur-IT?</h2>
-            <h4>Doświadczony Zespół:</h4><p><p>Nasz zespół składa się z wykwalifikowanych specjalistów, którzy posiadają bogate doświadczenie w dziedzinie bezpieczeństwa IT oraz programowania.</p>
-            <h4>Indywidualne Podejście:</h4><p>Rozumiemy, że każda firma jest inna. Dlatego też nasze rozwiązania są dostosowane do indywidualnych potrzeb i wymagań klienta.</p>
-            <h4>Ciągły Rozwój:</h4><p>Stale śledzimy najnowsze trendy i technologie, aby zapewnić naszym klientom najlepsze i najbardziej innowacyjne rozwiązania.</p>
-            <h4>Profesjonalizm:</h4><p>Jesteśmy oddani naszej pracy i dbamy o najwyższy standard obsługi klienta oraz jakość świadczonych usług.</p>
-            <p>Dołącz do Secur-IT już dziś i zabezpiecz swoją firmę przed wszelkimi zagrożeniami cybernetycznymi, jednocześnie rozwijając jej potencjał technologiczny.</p>
+        <div class="spinaczcenter"> 
+            <div class="formularz">
+            <form id="MyForm" action="./add.php" method="post">
+                    Imię i Nazwisko:
+                    <br>
+                    <input type="text" name="name" id="pole">
+                    <br>
+                    Adres e-mail:
+                    <br>
+                    <input type="email" name="email" id="pole">
+                    <br>
+                    Numer telefonu:
+                    <br>
+                    <div class="phonenumber">
+                            <?php include ('connect.php')?><br>
+                        <div class="phone_number">
+                            <input type="tel" name="nr_telefonu" id="pole">
+                        </div>
+                    </div>
+                    <br>
+                    Wiadomość:
+                    <br>
+                    <textarea name="message" id="message"></textarea>
+            </div>
+                    <br><br>
+                    Zgoda na przetwarzanie danych w celu odpowiedzi na wiadomość:
+                    <br><br>
+                    <input type="checkbox">
+                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Secur IT Sp. z o.o. 
+                    w celu odpowiedzi na wiadomość skierowaną z wykorzystaniem funkcjonalności strony internetowej 
+                    secut-it.com i dalszej wymiany korespondencji oraz oświadczam, 
+                    że zapoznałem się z treścią informacji o przetwarzaniu danych osobowych dostępnej w polityce prywatności
+                    <br><br>
+                    <input type="button" value="Resetuj" onclick="resetujPola()" class="przycisk">
+                    <button type="submit" name="submit" class="przycisk">
+                        Wyślij
+                    </button>
+                </form><br>
+        </div>
         </div>
         <footer>Dawid Mostowski 3A</footer>
     </main>
-</body>
+    </body>
 </html>
