@@ -21,31 +21,13 @@ const iloczyn1 = liczba1 * losowaLiczba1;
 const wartoscAbsolutna1 = Math.abs(liczba1);
 const podwojonaWartosc1 = liczba1 * 2;
 
-// Obliczenia dla drugiej liczby
-const przeciwnyZnak2 = -liczba2;
-const suma152 = liczba2 + 15;
-const suma052 = liczba2 + 0.5;
-const kwadrat2 = liczba2 ** 2;
-const podzielonaPrzez22 = liczba2 / 2;
-const resztaZDzieleniaPrzez22 = liczba2 % 2;
-const wiekszaO12 = liczba2 + 1;
-const mniejszaO12 = liczba2 - 1;
-const zaokraglonaWdol2 = Math.floor(liczba2 / 3);
-const zaokraglonaWgore2 = Math.ceil(liczba2 / 3);
-const zaokraglona2 = Math.round(liczba2 / 3);
-const pierwiastek2 = Math.sqrt(liczba2);
-const losowaLiczba2 = Math.random() * 50;
-const iloczyn2 = liczba2 * losowaLiczba2;
-const wartoscAbsolutna2 = Math.abs(liczba2);
-const podwojonaWartosc2 = liczba2 * 2;
-
-// Obliczenia dla trzeciej liczby
-const pierwiastekSumy = Math.sqrt(liczba3 + liczba3);
-const roznicaKwadratow3 = Math.pow(liczba1, 2) - Math.pow(liczba2, 2);
+// Obliczenia dla drugiej i  trzeciej liczby
+const pierwiastekSumy = Math.sqrt(liczba2 + liczba3);
+const roznicaKwadratow3 = Math.pow(liczba2, 2) - Math.pow(liczba3, 2);
 const potegaTrzecia3 = Math.pow(liczba3, 3);
 const kwadrat3 = Math.pow(liczba3, 2);
 const pierwiastekSzescienny3 = Math.pow(liczba3, 1/3);
-const sredniaArytmetyczna3 = (liczba1 + liczba2) / 2;
+const sredniaArytmetyczna3 = (liczba2 + liczba3) / 2;
 const pomnozPrzez103 = liczba3 * 10;
 let suma3 = 0;
 for (let i = 1; i <= liczba3; i++) {
@@ -73,25 +55,8 @@ wynikiDiv.innerHTML = `
     <li>Wartość absolutna: ${wartoscAbsolutna1}</li>
     <li>Podwojona wartość: ${podwojonaWartosc1}</li>
   </ul>
-  <p>Dla drugiej liczby:</p>
-  <ul>
-    <li>Przeciwny znak: ${przeciwnyZnak2}</li>
-    <li>Suma z 15: ${suma152}</li>
-    <li>Suma z 0.5: ${suma052}</li>
-    <li>Kwadrat: ${kwadrat2}</li>
-    <li>Podzielona przez 2: ${podzielonaPrzez22}</li>
-    <li>Reszta z dzielenia przez 2: ${resztaZDzieleniaPrzez22}</li>
-    <li>Większa o 1: ${wiekszaO12}</li>
-    <li>Mniejsza o 1: ${mniejszaO12}</li>
-    <li>Zaokrąglona w dół: ${zaokraglonaWdol2}</li>
-    <li>Zaokrąglona w górę: ${zaokraglonaWgore2}</li>
-    <li>Zaokrąglona: ${zaokraglona2}</li>
-    <li>Pierwiastek: ${pierwiastek2}</li>
-    <li>Iloczyn z losową liczbą: ${iloczyn2}</li>
-    <li>Wartość absolutna: ${wartoscAbsolutna2}</li>
-    <li>Podwojona wartość: ${podwojonaWartosc2}</li>
-  </ul>
-  <p>Dla trzeciej liczby:</p>
+  
+  <p>Dla drugiej i trzeciej liczby:</p>
   <ul>
     <li>Pierwiastek sumy: ${pierwiastekSumy}</li>
     <li>Różnica kwadratów: ${roznicaKwadratow3}</li>
