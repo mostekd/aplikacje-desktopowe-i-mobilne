@@ -2,8 +2,10 @@
     const kontener = document.getElementById('kontener');
 
     kontener.addEventListener('click', function() {
-        const randomColor = Math.floor(Math.random()*16777215).toString(16);
-        this.style.backgroundColor = "#" + randomColor;
+        const r = Math.floor(Math.random()*255)
+        const g = Math.floor(Math.random()*255)
+        const b = Math.floor(Math.random()*255)
+        this.style.backgroundColor = `rgb(${r},${g},${b})`
     });
 
     kontener.addEventListener('mouseover', function() {
