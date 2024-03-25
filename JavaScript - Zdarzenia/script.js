@@ -20,7 +20,7 @@
     const wyroznionyParagraf = document.querySelector('.wyroznione');
 
     wyroznionyParagraf.addEventListener('dblclick', function() {
-        this.textContent = 'Nazwa Powiatu';
+        this.textContent = 'Częstochowski';
     });
 
     wyroznionyParagraf.addEventListener('mouseenter', function() {
