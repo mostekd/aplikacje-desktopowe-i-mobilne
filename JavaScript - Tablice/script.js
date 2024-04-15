@@ -3,7 +3,7 @@ var outputDiv = document.getElementById("output");
 var tab1 = [7, 3, 1, 6, 9, 5, 4, 10, 2, 2];
 
 // Wypisz zawartość 5 komórek tablicy
-outputDiv.innerHTML += "<p>Pierwsze 5 komórek tab1: " + tab1.slice(0, 5) + "</p>";
+outputDiv.innerHTML += "<p>5 komórka tab1: " + tab1.slice(4, 5) + "</p>";
 
 // Zmień zawartość 7 komórki tablicy na 12
 tab1[6] = 12;
