@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator kosztu ogłoszeń</title>
+</head>
+<body>
+    <form id="adsForm">
+        <label for="adsNumber">Liczba ogłoszeń:</label>
+        <input type="number" id="adsNumber" name="adsNumber" min="1">
+        <br>
+        <label for="isRegularCustomer">Stały klient:</label>
+        <input type="checkbox" id="isRegularCustomer" name="isRegularCustomer">
+        <br>
+        <button type="button" id="calculateCost">Oblicz koszt</button>
+    </form>
+    <div id="cost"></div>
+    <button onclick="window.location.href='../index.html'">Powrót</button>
+    <script src="../js/5.js"></script>
+</body>
+</html>
