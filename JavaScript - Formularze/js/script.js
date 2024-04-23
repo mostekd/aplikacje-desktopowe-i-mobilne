@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Kalkulator zakupu cegieł
     const brickQuantityInput = document.getElementById("brickQuantity");
     const isPremiumBrickCheckbox = document.getElementById("isPremiumBrick");
     const distanceInput = document.getElementById("distance");
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         brickResultDisplay.textContent = `Zakupiona ilość cegieł: ${quantity}, ${brickType}, koszt zakupu cegieł: ${totalCost} zł, waga cegieł: ${totalWeight} kg, koszt transportu: ${transportCost.toFixed(2)} zł`;
     });
 
+    // Kalkulator kosztu biletów do aquaparku
     const normalTicketsInput = document.getElementById("normalTickets");
     const discountTicketsInput = document.getElementById("discountTickets");
     const hoursInput = document.getElementById("hours");
@@ -42,16 +44,28 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        const normalTicketCost = 25;
-        const discountTicketCost = 20;
-        const hourCost = 10;
-        let totalCost = (normalTickets * normalTicketCost) + (discountTickets * discountTicketCost);
-        totalCost += hours * hourCost;
+        const normalTicketCostPerHour = 10;
+        const discountTicketCostPerHour = 5;
+        const normalDailyTicketCost = 50;
+        const discountDailyTicketCost = 25;
+        let totalCost = (normalTickets * normalTicketCostPerHour) + (discountTickets * discountTicketCostPerHour);
+        
+        // Sprawdzenie czy liczba biletów ulgowych pozwala na darmowy bilet normalny
+        const freeNormalTickets = Math.floor(discountTickets / 15);
+        totalCost -= freeNormalTickets * normalTicketCostPerHour;
 
-        if (isLargeFamilyCard) {
-            totalCost *= 0.9; // 10% discount for large family card
+        // Obliczenie kosztu za godziny powyżej 4
+        if (hours > 4) {
+            totalCost += (hours - 4) * (normalTicketCostPerHour + discountTicketCostPerHour);
         }
 
-        ticketResultDisplay.textContent = `Koszt biletów: ${totalCost} zł`;
+        // Dodanie kosztu biletu całodziennego
+        if (hours >= 4) {
+            totalCost += isLargeFamilyCard ? discountDailyTicketCost * 0.9 : discountDailyTicketCost;
+        } else {
+            totalCost += isLargeFamilyCard ? normalDailyTicketCost * 0.9 : normalDailyTicketCost;
+        }
+
+        ticketResultDisplay.textContent = `Całkowity koszt wstępu do aquaparku: ${totalCost} zł`;
     });
 });
