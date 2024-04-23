@@ -23,49 +23,40 @@ document.addEventListener("DOMContentLoaded", function() {
         const totalWeight = quantity * weightPerBrick;
         const brickType = isPremium ? "cegła premium" : "cegła standardowa";
 
-        brickResultDisplay.textContent = `Zakupiona ilość cegieł: ${quantity}, ${brickType}, koszt zakupu cegieł: ${totalCost} zł, waga cegieł: ${totalWeight} kg, koszt transportu: ${transportCost.toFixed(2)} zł`;
+        brickResultDisplay.textContent = `Zakupiona ilość cegieł: ${quantity}, ${brickType}, koszt zakupu cegieł: ${totalCost.toFixed(2)} zł, waga cegieł: ${totalWeight} kg, koszt transportu: ${transportCost.toFixed(2)} zł`;
     });
 
-    // Kalkulator kosztu biletów do aquaparku
-    const normalTicketsInput = document.getElementById("normalTickets");
-    const discountTicketsInput = document.getElementById("discountTickets");
-    const hoursInput = document.getElementById("hours");
-    const isLargeFamilyCardCheckbox = document.getElementById("isLargeFamilyCard");
-    const ticketResultDisplay = document.getElementById("ticketResult");
-
+    // Kalkulator kosztu wejściówek do aquaparku
     document.getElementById("calculateTickets").addEventListener("click", function() {
-        const normalTickets = parseInt(normalTicketsInput.value);
-        const discountTickets = parseInt(discountTicketsInput.value);
-        const hours = parseInt(hoursInput.value);
-        const isLargeFamilyCard = isLargeFamilyCardCheckbox.checked;
+        var normalTickets = parseInt(document.getElementById('normalTickets').value);
+        var discountTickets = parseInt(document.getElementById('discountTickets').value);
+        var hours = parseInt(document.getElementById('hours').value);
+        var familyCard = document.getElementById('familyCard').checked;
 
-        if (isNaN(normalTickets) || isNaN(discountTickets) || isNaN(hours) || normalTickets < 0 || discountTickets < 0 || hours <= 0) {
-            ticketResultDisplay.textContent = "Wprowadź poprawne dane.";
-            return;
-        }
+        var normalPricePerHour = 10;
+        var discountPricePerHour = 5;
+        var normalPriceAllDay = 50;
+        var discountPriceAllDay = 25;
+        var totalCost = 0;
 
-        const normalTicketCostPerHour = 10;
-        const discountTicketCostPerHour = 5;
-        const normalDailyTicketCost = 50;
-        const discountDailyTicketCost = 25;
-        let totalCost = (normalTickets * normalTicketCostPerHour) + (discountTickets * discountTicketCostPerHour);
-        
-        // Sprawdzenie czy liczba biletów ulgowych pozwala na darmowy bilet normalny
-        const freeNormalTickets = Math.floor(discountTickets / 15);
-        totalCost -= freeNormalTickets * normalTicketCostPerHour;
-
-        // Obliczenie kosztu za godziny powyżej 4
-        if (hours > 4) {
-            totalCost += (hours - 4) * (normalTicketCostPerHour + discountTicketCostPerHour);
-        }
-
-        // Dodanie kosztu biletu całodziennego
-        if (hours >= 4) {
-            totalCost += isLargeFamilyCard ? discountDailyTicketCost * 0.9 : discountDailyTicketCost;
+        // Calculate total cost based on hours
+        if (hours <= 4) {
+            totalCost += normalTickets * normalPricePerHour * hours;
+            totalCost += discountTickets * discountPricePerHour * hours;
         } else {
-            totalCost += isLargeFamilyCard ? normalDailyTicketCost * 0.9 : normalDailyTicketCost;
+            totalCost += normalTickets * normalPriceAllDay;
+            totalCost += discountTickets * discountPriceAllDay;
         }
 
-        ticketResultDisplay.textContent = `Całkowity koszt wstępu do aquaparku: ${totalCost} zł`;
+        // Apply family card discount
+        if (familyCard) {
+            totalCost *= 0.9;
+        }
+
+        // Apply free normal ticket for every 15 discount tickets
+        var freeNormalTickets = Math.floor(discountTickets / 15);
+        totalCost -= freeNormalTickets * normalPriceAllDay;
+
+        document.getElementById('ticketResult').innerHTML = "Całkowity koszt wstępu do aquaparku: " + totalCost.toFixed(2) + " zł";
     });
 });

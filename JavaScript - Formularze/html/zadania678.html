@@ -22,20 +22,20 @@
     <div id="brickResult"></div>
     <hr>
     <h2>Wejściówki do aquaparku</h2>
-    <form id="ticketsForm">
+    <form id="aquaparkForm">
         <label for="normalTickets">Ilość biletów normalnych:</label>
-        <input type="number" id="normalTickets" name="normalTickets" min="0">
-        <br>
+        <input type="number" id="normalTickets" name="normalTickets" min="0" required><br><br>
+        
         <label for="discountTickets">Ilość biletów ulgowych:</label>
-        <input type="number" id="discountTickets" name="discountTickets" min="0">
-        <br>
+        <input type="number" id="discountTickets" name="discountTickets" min="0" required><br><br>
+        
         <label for="hours">Ilość godzin:</label>
-        <input type="number" id="hours" name="hours" min="0">
-        <br>
-        <label for="isLargeFamilyCard">Karta dużej rodziny:</label>
-        <input type="checkbox" id="isLargeFamilyCard" name="isLargeFamilyCard">
-        <br>
-        <button type="button" id="calculateTickets">Oblicz koszt biletów</button>
+        <input type="number" id="hours" name="hours" min="1" required><br><br>
+        
+        <input type="checkbox" id="familyCard" name="familyCard">
+        <label for="familyCard">Karta dużej rodziny</label><br><br>
+        
+        <button type="button" id="calculateTickets">Oblicz</button>
     </form>
     <div id="ticketResult"></div>
     <button onclick="window.location.href='../index.html'">Powrót</button>
