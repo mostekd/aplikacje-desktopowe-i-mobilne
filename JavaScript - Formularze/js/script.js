@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         //nakłąda zniżkę gdy pole familCard jest zaznaczone
         if (familyCard.checked) {
-            totalCost *= 0.8;
+            totalCost *= 0.9;
         }
 
         //wyświetla wynik w odpowiednim polu
