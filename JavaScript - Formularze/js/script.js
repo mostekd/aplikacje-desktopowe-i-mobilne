@@ -27,36 +27,29 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Kalkulator kosztu wejściówek do aquaparku
-    document.getElementById("calculateTickets").addEventListener("click", function() {
+        document.getElementById("calculateTickets").addEventListener("click", function() {
         var normalTickets = parseInt(document.getElementById('normalTickets').value);
         var discountTickets = parseInt(document.getElementById('discountTickets').value);
         var hours = parseInt(document.getElementById('hours').value);
-        var familyCard = document.getElementById('familyCard').checked;
-
-        var normalPricePerHour = 10;
-        var discountPricePerHour = 5;
-        var normalPriceAllDay = 50;
-        var discountPriceAllDay = 25;
+        var familyCard = document.getElementById('familyCard');
         var totalCost = 0;
 
-        // Calculate total cost based on hours
-        if (hours <= 4) {
-            totalCost += normalTickets * normalPricePerHour * hours;
-            totalCost += discountTickets * discountPricePerHour * hours;
+        //odejmuje od normalnych biletów odpowiednią ilość co piętnascie ulgowych
+        normalTickets -= Math.floor(discountTickets / 15);
+
+        //oblicza koszt w zależności od ilości godzin
+        if (hours > 4) {
+            totalCost = normalTickets * 50 + discountTickets * 25;
         } else {
-            totalCost += normalTickets * normalPriceAllDay;
-            totalCost += discountTickets * discountPriceAllDay;
+            totalCost = normalTickets * 10 + discountTickets * 5;
         }
 
-        // Apply family card discount
-        if (familyCard) {
-            totalCost *= 0.9;
+        //nakłąda zniżkę gdy pole familCard jest zaznaczone
+        if (familyCard.checked) {
+            totalCost *= 0.8;
         }
 
-        // Apply free normal ticket for every 15 discount tickets
-        var freeNormalTickets = Math.floor(discountTickets / 15);
-        totalCost -= freeNormalTickets * normalPriceAllDay;
-
-        document.getElementById('ticketResult').innerHTML = "Całkowity koszt wstępu do aquaparku: " + totalCost.toFixed(2) + " zł";
+        //wyświetla wynik w odpowiednim polu
+        document.getElementById("ticketResult").innerHTML = "Całkowity koszt wstępu do aquaparku: " + totalCost + "zł";
     });
 });
