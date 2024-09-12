@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Grzes M\\OneDrive - TEB Edukacja sp z o.o\\Szko\u0142a\\kl4\\Aplikacje mobilne i desktopowe\\Typy danych\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{52069119-6726-409E-9F97-97B6820D69A2}|Typy danych\\Typy danych.csproj|c:\\users\\grzes m\\onedrive - teb edukacja sp z o.o\\szko\u0142a\\kl4\\aplikacje mobilne i desktopowe\\typy danych\\typy danych\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52069119-6726-409E-9F97-97B6820D69A2}|Typy danych\\Typy danych.csproj|solutionrelative:typy danych\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Grzes M\\OneDrive - TEB Edukacja sp z o.o\\Szko\u0142a\\kl4\\Aplikacje mobilne i desktopowe\\Typy danych\\Typy danych\\Program.cs",
+              "RelativeDocumentMoniker": "Typy danych\\Program.cs",
+              "ToolTip": "C:\\Users\\Grzes M\\OneDrive - TEB Edukacja sp z o.o\\Szko\u0142a\\kl4\\Aplikacje mobilne i desktopowe\\Typy danych\\Typy danych\\Program.cs",
+              "RelativeToolTip": "Typy danych\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T11:59:31.159Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
