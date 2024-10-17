@@ -151,14 +151,13 @@ public class Student
     public string Nazwisko { get; set; }
     public string NumerIndeksu { get; set; }
     public List<int> Oceny = new List<int>();
-    public List<Tuple<DateTime, bool>> ListaObecnosci { get; set; }
+    public List<Tuple<DateTime, bool>> ListaObecnosci = new List<Tuple<DateTime, bool>>();
 
     public Student(string imie, string nazwisko, string numerIndeksu)
     {
         Imie = imie;
         Nazwisko = nazwisko;
         NumerIndeksu = numerIndeksu;
-        ListaObecnosci = new List<Tuple<DateTime, bool>>();
     }
 
     public void DodajOcene(int ocena)
