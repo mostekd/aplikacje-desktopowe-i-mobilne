@@ -26,13 +26,12 @@ public class Bank
 {
     public string Nazwa { get; set; }
     public string Adres { get; set; }
-    public List<Klient> Klienci { get; set; }
+    public List<Klient> Klienci =  new List<Klient>();
 
     public Bank(string nazwa, string adres)
     {
         Nazwa = nazwa;
         Adres = adres;
-        Klienci = new List<Klient>();
     }
 
     public void DodajKlienta(Klient klient)
@@ -68,7 +67,7 @@ using System.Collections.Generic;
 public class Samochod
 {
     public string Marka { get; set; }
-    public List<string> Modele { get; set; }
+    public List<string> Modele = new List<string>();
     public int RokProdukcji { get; set; }
     public decimal Cena { get; set; }
 
@@ -77,7 +76,6 @@ public class Samochod
         Marka = marka;
         RokProdukcji = rokProdukcji;
         Cena = cena;
-        Modele = new List<string>();
     }
 
     public void DodajModel(string model)
@@ -152,7 +150,7 @@ public class Student
     public string Imie { get; set; }
     public string Nazwisko { get; set; }
     public string NumerIndeksu { get; set; }
-    public List<int> Oceny { get; set; }
+    public List<int> Oceny = new List<int>();
     public List<Tuple<DateTime, bool>> ListaObecnosci { get; set; }
 
     public Student(string imie, string nazwisko, string numerIndeksu)
@@ -160,7 +158,6 @@ public class Student
         Imie = imie;
         Nazwisko = nazwisko;
         NumerIndeksu = numerIndeksu;
-        Oceny = new List<int>();
         ListaObecnosci = new List<Tuple<DateTime, bool>>();
     }
 
