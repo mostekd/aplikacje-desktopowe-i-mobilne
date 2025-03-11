@@ -6,7 +6,7 @@ class Program
     {
         int[] array = { 64, 25, 12, 22, 11 };
         SelectionSort(array);
-        Console.WriteLine(string.Join(", ", array)); // Output: 11, 12, 22, 25, 64
+        Console.WriteLine(string.Join(", ", array));
     }
 
     static void SelectionSort(int[] arr)
