@@ -1,13 +1,11 @@
 using System;
 
-// Interfejs IPayment
 public interface IPayment
 {
     void ProcessPayment();
     void Refund();
 }
 
-// Klasa CreditCardPayment
 public class CreditCardPayment : IPayment
 {
     public void ProcessPayment()
@@ -21,7 +19,6 @@ public class CreditCardPayment : IPayment
     }
 }
 
-// Klasa PayPalPayment
 public class PayPalPayment : IPayment
 {
     public void ProcessPayment()
@@ -35,7 +32,6 @@ public class PayPalPayment : IPayment
     }
 }
 
-// Klasa BankTransferPayment (rozszerzenie)
 public class BankTransferPayment : IPayment
 {
     public void ProcessPayment()
@@ -49,7 +45,6 @@ public class BankTransferPayment : IPayment
     }
 }
 
-// Klasa z metodą ObsluzPlatnosc
 public class PaymentProcessor
 {
     public void ObsluzPlatnosc(IPayment payment)
@@ -59,7 +54,6 @@ public class PaymentProcessor
     }
 }
 
-// Przykładowe użycie
 class Program
 {
     static void Main(string[] args)
