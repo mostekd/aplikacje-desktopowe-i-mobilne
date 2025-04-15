@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-// Interfejs IMedia
 public interface IMedia
 {
     void Play();
