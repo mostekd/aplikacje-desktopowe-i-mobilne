@@ -47,7 +47,6 @@ public class GuestUserRegistration : IUserRegistration
 
     public void SendConfirmationEmail()
     {
-        // Brak wysyłania emaila dla gościa
         Console.WriteLine("Użytkownik gość - brak wysyłania emaila potwierdzającego");
     }
 }
