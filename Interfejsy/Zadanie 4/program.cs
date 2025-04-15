@@ -1,13 +1,11 @@
 using System;
 
-// Interfejs IEmployee
 public interface IEmployee
 {
     void Work();
     void TakeBreak();
 }
 
-// Klasa Developer
 public class Developer : IEmployee
 {
     public void Work()
@@ -21,7 +19,6 @@ public class Developer : IEmployee
     }
 }
 
-// Klasa Manager
 public class Manager : IEmployee
 {
     public void Work()
@@ -35,7 +32,6 @@ public class Manager : IEmployee
     }
 }
 
-// Klasa Intern (rozszerzenie)
 public class Intern : IEmployee
 {
     public void Work()
@@ -49,7 +45,6 @@ public class Intern : IEmployee
     }
 }
 
-// Klasa z metodą WykonajObowiazki
 public class EmployeeManager
 {
     public void WykonajObowiazki(IEmployee employee)
@@ -59,7 +54,6 @@ public class EmployeeManager
     }
 }
 
-// Przykładowe użycie
 class Program
 {
     static void Main(string[] args)
