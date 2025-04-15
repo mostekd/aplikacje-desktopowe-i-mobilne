@@ -8,7 +8,6 @@ public interface IMedia
     void Stop();
 }
 
-// Klasa Audio
 public class Audio : IMedia
 {
     public void Play()
@@ -22,7 +21,6 @@ public class Audio : IMedia
     }
 }
 
-// Klasa Video
 public class Video : IMedia
 {
     public void Play()
@@ -36,7 +34,6 @@ public class Video : IMedia
     }
 }
 
-// Przykładowe użycie
 class Program
 {
     static void Main(string[] args)
