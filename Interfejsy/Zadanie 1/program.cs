@@ -1,6 +1,5 @@
 using System;
 
-// Interfejs IZamowienie
 public interface IZamowienie
 {
     void ZlozZamowienie();
@@ -8,7 +7,6 @@ public interface IZamowienie
     void PokazStatus();
 }
 
-// Klasa ZamowienieOnline
 public class ZamowienieOnline : IZamowienie
 {
     public void ZlozZamowienie()
@@ -27,7 +25,6 @@ public class ZamowienieOnline : IZamowienie
     }
 }
 
-// Klasa ZamowienieTelefoniczne
 public class ZamowienieTelefoniczne : IZamowienie
 {
     public void ZlozZamowienie()
@@ -46,7 +43,6 @@ public class ZamowienieTelefoniczne : IZamowienie
     }
 }
 
-// Klasa z metodą ObsluzZamowienie
 public class ObslugaZamowien
 {
     public void ObsluzZamowienie(IZamowienie zamowienie)
@@ -55,7 +51,6 @@ public class ObslugaZamowien
     }
 }
 
-// Przykładowe użycie
 class Program
 {
     static void Main(string[] args)
