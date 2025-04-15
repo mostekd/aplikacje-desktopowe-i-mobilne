@@ -1,13 +1,11 @@
 using System;
 
-// Interfejs IUserRegistration
 public interface IUserRegistration
 {
     void Register();
     void SendConfirmationEmail();
 }
 
-// Klasa BasicUserRegistration
 public class BasicUserRegistration : IUserRegistration
 {
     public void Register()
@@ -21,7 +19,6 @@ public class BasicUserRegistration : IUserRegistration
     }
 }
 
-// Klasa PremiumUserRegistration
 public class PremiumUserRegistration : IUserRegistration
 {
     public void Register()
@@ -41,7 +38,6 @@ public class PremiumUserRegistration : IUserRegistration
     }
 }
 
-// Klasa GuestUserRegistration (rozszerzenie)
 public class GuestUserRegistration : IUserRegistration
 {
     public void Register()
@@ -56,7 +52,6 @@ public class GuestUserRegistration : IUserRegistration
     }
 }
 
-// Klasa z metodą RejestrujUzytkownika
 public class RegistrationService
 {
     public void RejestrujUzytkownika(IUserRegistration user)
@@ -66,7 +61,6 @@ public class RegistrationService
     }
 }
 
-// Przykładowe użycie
 class Program
 {
     static void Main(string[] args)
