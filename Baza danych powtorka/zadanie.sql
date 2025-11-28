@@ -9,7 +9,7 @@ create table if not exists testowa (
   imie varchar(55) not null,
   nazwisko varchar(155) not null,
   wiek int not null
-) engine=innodb default charset=utf8mb4 collate=utf8mb4_polish_ci;
+)
 
 insert into testowa (imie, nazwisko, wiek) values
 ('piotr','kowalski',50),
