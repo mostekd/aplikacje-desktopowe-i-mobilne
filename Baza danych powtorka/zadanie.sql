@@ -1,7 +1,6 @@
 create database if not exists baza
   default character set utf8mb4
   collate utf8mb4_polish_ci;
-
 use baza;
 
 create table if not exists testowa (
@@ -9,7 +8,7 @@ create table if not exists testowa (
   imie varchar(55) not null,
   nazwisko varchar(155) not null,
   wiek int not null
-)
+) engine=innodb default charset=utf8mb4 collate=utf8mb4_polish_ci;
 
 insert into testowa (imie, nazwisko, wiek) values
 ('piotr','kowalski',50),
@@ -18,8 +17,10 @@ insert into testowa (imie, nazwisko, wiek) values
 ('agata','młyn',22),
 ('kasia','sobek',45),
 ('natalia','parus',18),
-('kuba','wojewódzki',45),
+('kuba','wojewodzki',45),
 ('zdzisiu','pierdzipieta',55);
+
+select id, imie, nazwisko, wiek from testowa;
 
 
 select id, imie, nazwisko, wiek
@@ -29,3 +30,17 @@ order by imie collate utf8mb4_polish_ci asc;
 select id, imie, nazwisko, wiek
 from testowa
 order by wiek asc, imie collate utf8mb4_polish_ci asc;
+
+
+select count(*) as liczba_osob, round(avg(wiek)) as srednia_wieku from testowa;
+
+
+select imie, nazwisko, wiek
+from testowa
+order by wiek asc, id asc
+limit 1;
+
+select imie, nazwisko, wiek
+from testowa
+order by wiek desc, id asc
+limit 1;
